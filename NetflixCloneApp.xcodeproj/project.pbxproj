@@ -72,6 +72,7 @@
 				AD3514F92892A029005F9B7A /* Views */,
 				AD3514FA2892A0FD005F9B7A /* ViewModels */,
 				AD3514ED2891BDA8005F9B7A /* Controllers */,
+				AD3514EB2891BD5A005F9B7A /* MainTabBarViewController.swift */,
 				AD3514F72891C32B005F9B7A /* App */,
 				AD3514E02891BB00005F9B7A /* Assets.xcassets */,
 			);
@@ -81,7 +82,6 @@
 		AD3514ED2891BDA8005F9B7A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AD3514EB2891BD5A005F9B7A /* MainTabBarViewController.swift */,
 				AD3514EE2891BDC8005F9B7A /* HomeViewController.swift */,
 				AD3514F02891BE06005F9B7A /* UpcomingViewController.swift */,
 				AD3514F22891BE2C005F9B7A /* SearchViewController.swift */,

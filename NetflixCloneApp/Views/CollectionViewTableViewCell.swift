@@ -8,8 +8,8 @@
 import UIKit
 
 class CollectionViewTableViewCell: UITableViewCell {
-
-  static let identifier = "CollectionViewTableViewCell"
+    
+    static let identifier = "CollectionViewTableViewCell"
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -40,6 +40,7 @@ class CollectionViewTableViewCell: UITableViewCell {
     
 }
 
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
