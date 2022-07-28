@@ -16,6 +16,7 @@
 		AD3514F12891BE06005F9B7A /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514F02891BE06005F9B7A /* UpcomingViewController.swift */; };
 		AD3514F32891BE2C005F9B7A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514F22891BE2C005F9B7A /* SearchViewController.swift */; };
 		AD3514F52891BE4C005F9B7A /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514F42891BE4C005F9B7A /* DownloadsViewController.swift */; };
+		AD3514FE2892A203005F9B7A /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514FD2892A203005F9B7A /* CollectionViewTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AD3514F02891BE06005F9B7A /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
 		AD3514F22891BE2C005F9B7A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AD3514F42891BE4C005F9B7A /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		AD3514FD2892A203005F9B7A /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +64,14 @@
 		AD3514D62891BAFF005F9B7A /* NetflixCloneApp */ = {
 			isa = PBXGroup;
 			children = (
+				AD3514FC2892A14A005F9B7A /* Managers */,
+				AD3514F62891C2D1005F9B7A /* Resources */,
+				AD3514FB2892A110005F9B7A /* Models */,
+				AD3514F92892A029005F9B7A /* Views */,
+				AD3514FA2892A0FD005F9B7A /* ViewModels */,
 				AD3514ED2891BDA8005F9B7A /* Controllers */,
 				AD3514F72891C32B005F9B7A /* App */,
-				AD3514F62891C2D1005F9B7A /* Resources */,
+				AD3514E02891BB00005F9B7A /* Assets.xcassets */,
 			);
 			path = NetflixCloneApp;
 			sourceTree = "<group>";
@@ -85,7 +92,6 @@
 		AD3514F62891C2D1005F9B7A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AD3514E02891BB00005F9B7A /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -106,6 +112,35 @@
 				AD3514E22891BB00005F9B7A /* LaunchScreen.storyboard */,
 			);
 			path = Launchscreen;
+			sourceTree = "<group>";
+		};
+		AD3514F92892A029005F9B7A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD3514FD2892A203005F9B7A /* CollectionViewTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AD3514FA2892A0FD005F9B7A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AD3514FB2892A110005F9B7A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD3514FC2892A14A005F9B7A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +215,7 @@
 			files = (
 				AD3514F32891BE2C005F9B7A /* SearchViewController.swift in Sources */,
 				AD3514EC2891BD5A005F9B7A /* MainTabBarViewController.swift in Sources */,
+				AD3514FE2892A203005F9B7A /* CollectionViewTableViewCell.swift in Sources */,
 				AD3514F52891BE4C005F9B7A /* DownloadsViewController.swift in Sources */,
 				AD3514D82891BAFF005F9B7A /* AppDelegate.swift in Sources */,
 				AD3514DA2891BAFF005F9B7A /* SceneDelegate.swift in Sources */,
