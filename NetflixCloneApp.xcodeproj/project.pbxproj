@@ -17,6 +17,7 @@
 		AD3514F32891BE2C005F9B7A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514F22891BE2C005F9B7A /* SearchViewController.swift */; };
 		AD3514F52891BE4C005F9B7A /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514F42891BE4C005F9B7A /* DownloadsViewController.swift */; };
 		AD3514FE2892A203005F9B7A /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514FD2892A203005F9B7A /* CollectionViewTableViewCell.swift */; };
+		AD3515002892AE1B005F9B7A /* HeroHeadUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514FF2892AE1B005F9B7A /* HeroHeadUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AD3514F22891BE2C005F9B7A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AD3514F42891BE4C005F9B7A /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		AD3514FD2892A203005F9B7A /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		AD3514FF2892AE1B005F9B7A /* HeroHeadUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeadUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				AD3514FD2892A203005F9B7A /* CollectionViewTableViewCell.swift */,
+				AD3514FF2892AE1B005F9B7A /* HeroHeadUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				AD3514DA2891BAFF005F9B7A /* SceneDelegate.swift in Sources */,
 				AD3514F12891BE06005F9B7A /* UpcomingViewController.swift in Sources */,
 				AD3514EF2891BDC8005F9B7A /* HomeViewController.swift in Sources */,
+				AD3515002892AE1B005F9B7A /* HeroHeadUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
