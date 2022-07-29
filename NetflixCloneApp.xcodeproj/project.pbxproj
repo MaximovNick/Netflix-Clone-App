@@ -18,6 +18,7 @@
 		AD3514F52891BE4C005F9B7A /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514F42891BE4C005F9B7A /* DownloadsViewController.swift */; };
 		AD3514FE2892A203005F9B7A /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514FD2892A203005F9B7A /* CollectionViewTableViewCell.swift */; };
 		AD3515002892AE1B005F9B7A /* HeroHeadUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514FF2892AE1B005F9B7A /* HeroHeadUIView.swift */; };
+		AD3515022893FE17005F9B7A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3515012893FE17005F9B7A /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		AD3514F42891BE4C005F9B7A /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
 		AD3514FD2892A203005F9B7A /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		AD3514FF2892AE1B005F9B7A /* HeroHeadUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeadUIView.swift; sourceTree = "<group>"; };
+		AD3515012893FE17005F9B7A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		AD3514FC2892A14A005F9B7A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				AD3515012893FE17005F9B7A /* NetworkManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			files = (
 				AD3514F32891BE2C005F9B7A /* SearchViewController.swift in Sources */,
 				AD3514EC2891BD5A005F9B7A /* MainTabBarViewController.swift in Sources */,
+				AD3515022893FE17005F9B7A /* NetworkManager.swift in Sources */,
 				AD3514FE2892A203005F9B7A /* CollectionViewTableViewCell.swift in Sources */,
 				AD3514F52891BE4C005F9B7A /* DownloadsViewController.swift in Sources */,
 				AD3514D82891BAFF005F9B7A /* AppDelegate.swift in Sources */,
