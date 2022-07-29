@@ -14,13 +14,17 @@ struct Constants {
    static let api = "https://api.themoviedb.org/3/trending/all/day?api_key=697d439ac993538da4e3e60b54e762cd"
 }
 
+enum APIError: Error {
+    case failedToGetData
+}
+
 class NetworkManager {
     
     static let shared = NetworkManager()
     private init() {}
     
     
-    func getTrendingMovies(completion: @escaping (String) -> Void) {
+    func getTrendingMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
         
         guard let url = URL(string: Constants.api) else { return }
         
@@ -29,11 +33,10 @@ class NetworkManager {
                 return
             }
             do {
-                let results = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-                print(results)
-
+                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                completion(.success(results.results))
             } catch {
-                print(error.localizedDescription)
+                completion(.failure(error))
             }
         }
         task.resume()
