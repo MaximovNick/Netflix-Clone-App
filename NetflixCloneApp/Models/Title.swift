@@ -1,17 +1,17 @@
 //
-//  Tv.swift
+//  Movie.swift
 //  NetflixCloneApp
 //
-//  Created by Nikolai Maksimov on 30.07.2022.
+//  Created by Nikolai Maksimov on 29.07.2022.
 //
 
 import Foundation
 
-struct TrendingTvResponse: Codable {
-    let results: [Tv]
+struct TrendingTitleResponse: Codable {
+    let results: [Title]
 }
 
-struct Tv: Codable {
+struct Title: Codable {
     let id: Int
     let media_type: String?
     let original_name: String?
@@ -22,3 +22,5 @@ struct Tv: Codable {
     let release_date: String?
     let vote_average: Double
 }
+
+

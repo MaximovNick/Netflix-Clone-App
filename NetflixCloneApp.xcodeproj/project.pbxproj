@@ -19,9 +19,8 @@
 		AD3514FE2892A203005F9B7A /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514FD2892A203005F9B7A /* CollectionViewTableViewCell.swift */; };
 		AD3515002892AE1B005F9B7A /* HeroHeadUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3514FF2892AE1B005F9B7A /* HeroHeadUIView.swift */; };
 		AD3515022893FE17005F9B7A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3515012893FE17005F9B7A /* NetworkManager.swift */; };
-		AD351504289434ED005F9B7A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD351503289434ED005F9B7A /* Movie.swift */; };
+		AD351504289434ED005F9B7A /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD351503289434ED005F9B7A /* Title.swift */; };
 		AD351506289543FD005F9B7A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD351505289543FD005F9B7A /* Extensions.swift */; };
-		AD35150828954961005F9B7A /* Tv.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35150728954961005F9B7A /* Tv.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +38,8 @@
 		AD3514FD2892A203005F9B7A /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		AD3514FF2892AE1B005F9B7A /* HeroHeadUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroHeadUIView.swift; sourceTree = "<group>"; };
 		AD3515012893FE17005F9B7A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		AD351503289434ED005F9B7A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		AD351503289434ED005F9B7A /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		AD351505289543FD005F9B7A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		AD35150728954961005F9B7A /* Tv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tv.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +142,7 @@
 		AD3514FB2892A110005F9B7A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AD351503289434ED005F9B7A /* Movie.swift */,
-				AD35150728954961005F9B7A /* Tv.swift */,
+				AD351503289434ED005F9B7A /* Title.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,8 +235,7 @@
 				AD351506289543FD005F9B7A /* Extensions.swift in Sources */,
 				AD3514F12891BE06005F9B7A /* UpcomingViewController.swift in Sources */,
 				AD3514EF2891BDC8005F9B7A /* HomeViewController.swift in Sources */,
-				AD351504289434ED005F9B7A /* Movie.swift in Sources */,
-				AD35150828954961005F9B7A /* Tv.swift in Sources */,
+				AD351504289434ED005F9B7A /* Title.swift in Sources */,
 				AD3515002892AE1B005F9B7A /* HeroHeadUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

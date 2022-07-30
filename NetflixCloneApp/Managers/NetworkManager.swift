@@ -27,7 +27,7 @@ class NetworkManager {
     private init() {}
     
     
-    func getTrendingMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
+    func getTrendingMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
         
         guard let url = URL(string: Constants.trendingMovie) else { return }
         
@@ -36,33 +36,33 @@ class NetworkManager {
                 return
             }
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 print(results)
                 completion(.success(results.results))
             } catch {
-                completion(.failure(error))
+                completion(.failure(APIError.failedToGetData))
             }
         }
         task.resume()
     }
     
-    func getTrendingTvs(completion: @escaping (Result<[Tv], Error>) -> Void) {
+    func getTrendingTvs(completion: @escaping (Result<[Title], Error>) -> Void) {
         guard let url = URL(string: Constants.trendingTv) else { return }
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
                 return
             }
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 print(results)
             } catch {
-                print(error.localizedDescription)
+                completion(.failure(APIError.failedToGetData))
             }
         }
         task.resume()
     }
     
-    func getUpcomingMovies(completion: @escaping (Result<[Movie], Error>) -> Void) {
+    func getUpcomingMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
         guard let url = URL(string: Constants.upcomingMovie) else { return }
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
@@ -70,7 +70,7 @@ class NetworkManager {
                 return
             }
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 print(results)
             } catch {
                 print(error.localizedDescription)
@@ -79,33 +79,33 @@ class NetworkManager {
         task.resume()
     }
     
-    func getPopular(completion: @escaping (Result<[Movie], Error>) -> Void) {
+    func getPopular(completion: @escaping (Result<[Title], Error>) -> Void) {
         guard let url = URL(string: Constants.popularMovie) else { return }
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
                 return
             }
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 print(results)
             } catch {
-                print(error.localizedDescription)
+                completion(.failure(APIError.failedToGetData))
             }
         }
         task.resume()
     }
     
-    func getTopRated(completion: @escaping (Result<[Movie], Error>) -> Void) {
+    func getTopRated(completion: @escaping (Result<[Title], Error>) -> Void) {
         guard let url = URL(string: Constants.ratedMovie) else { return }
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
                 return
             }
             do {
-                let results = try JSONDecoder().decode(TrendingMovieResponse.self, from: data)
+                let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
                 print(results)
             } catch {
-                print(error.localizedDescription)
+                completion(.failure(APIError.failedToGetData))
             }
         }
         task.resume()
