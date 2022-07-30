@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    let sectionTitles: [String] = ["Trending Movies", "Popular", "Trending Tv", "Upcoming Movies", "Top Rated"]
+    let sectionTitles: [String] = ["Trending Movies", "Trending Tv", "Popular", "Upcoming Movies", "Top Rated"]
     
     private let homeFeedTable: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         let headerView = HeroHeadUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
         
-        getTrendingMovies()
+        fetchData()
     }
     
     override func viewDidLayoutSubviews() {
@@ -41,15 +41,27 @@ class HomeViewController: UIViewController {
         homeFeedTable.frame = view.bounds
     }
     
-    private func getTrendingMovies() {
-        NetworkManager.shared.getTrendingMovies { results in
-            switch results {
-            case .success(let movies):
-                print(movies)
-            case .failure(let error):
-                print(error)
-            }
-        }
+    private func fetchData() {
+//        NetworkManager.shared.getTrendingMovies { results in
+//            switch results {
+//            case .success(let movies):
+//                print(movies)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//        NetworkManager.shared.getTrendingTvs { results in
+//            //
+//        }
+//        NetworkManager.shared.getUpcomingMovies { _ in
+//            //
+//        }
+//        NetworkManager.shared.getPopular { _ in
+//            //
+//        }
+//        NetworkManager.shared.getTopRated { _ in
+//            //
+//        }
     }
 }
 
