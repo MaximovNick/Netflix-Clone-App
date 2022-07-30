@@ -21,6 +21,9 @@
 		AD3515022893FE17005F9B7A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3515012893FE17005F9B7A /* NetworkManager.swift */; };
 		AD351504289434ED005F9B7A /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD351503289434ED005F9B7A /* Title.swift */; };
 		AD351506289543FD005F9B7A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD351505289543FD005F9B7A /* Extensions.swift */; };
+		AD35150A2895704F005F9B7A /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3515092895704F005F9B7A /* TitleCollectionViewCell.swift */; };
+		AD35150D289572A0005F9B7A /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AD35150C289572A0005F9B7A /* SDWebImage */; };
+		AD35150F289572A0005F9B7A /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AD35150E289572A0005F9B7A /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,7 @@
 		AD3515012893FE17005F9B7A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AD351503289434ED005F9B7A /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		AD351505289543FD005F9B7A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AD3515092895704F005F9B7A /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD35150F289572A0005F9B7A /* SDWebImageMapKit in Frameworks */,
+				AD35150D289572A0005F9B7A /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +134,7 @@
 			children = (
 				AD3514FD2892A203005F9B7A /* CollectionViewTableViewCell.swift */,
 				AD3514FF2892AE1B005F9B7A /* HeroHeadUIView.swift */,
+				AD3515092895704F005F9B7A /* TitleCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +178,10 @@
 			dependencies = (
 			);
 			name = NetflixCloneApp;
+			packageProductDependencies = (
+				AD35150C289572A0005F9B7A /* SDWebImage */,
+				AD35150E289572A0005F9B7A /* SDWebImageMapKit */,
+			);
 			productName = NetflixCloneApp;
 			productReference = AD3514D42891BAFF005F9B7A /* NetflixCloneApp.app */;
 			productType = "com.apple.product-type.application";
@@ -199,6 +210,9 @@
 				Base,
 			);
 			mainGroup = AD3514CB2891BAFF005F9B7A;
+			packageReferences = (
+				AD35150B289572A0005F9B7A /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = AD3514D52891BAFF005F9B7A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD3514F32891BE2C005F9B7A /* SearchViewController.swift in Sources */,
+				AD35150A2895704F005F9B7A /* TitleCollectionViewCell.swift in Sources */,
 				AD3514EC2891BD5A005F9B7A /* MainTabBarViewController.swift in Sources */,
 				AD3515022893FE17005F9B7A /* NetworkManager.swift in Sources */,
 				AD3514FE2892A203005F9B7A /* CollectionViewTableViewCell.swift in Sources */,
@@ -442,6 +457,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD35150B289572A0005F9B7A /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD35150C289572A0005F9B7A /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD35150B289572A0005F9B7A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		AD35150E289572A0005F9B7A /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD35150B289572A0005F9B7A /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD3514CC2891BAFF005F9B7A /* Project object */;
 }
