@@ -40,8 +40,7 @@ class HomeViewController: UIViewController {
         let headerView = HeroHeadUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
         
-        NetworkManager.shared.getMovie(with: "Harry Potter")
-       
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -77,6 +76,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     print(error.localizedDescription)
                 }
             }
+            
         case Sections.TrendingTV.rawValue:
             NetworkManager.shared.getTrendingTvs { result in
                 switch result {

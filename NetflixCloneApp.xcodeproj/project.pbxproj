@@ -27,6 +27,7 @@
 		AD3515112896F18D005F9B7A /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3515102896F18D005F9B7A /* TitleTableViewCell.swift */; };
 		AD3515132896F828005F9B7A /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3515122896F828005F9B7A /* TitleViewModel.swift */; };
 		AD35151528982963005F9B7A /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35151428982963005F9B7A /* SearchResultsViewController.swift */; };
+		AD35151928999327005F9B7A /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35151828999327005F9B7A /* YoutubeSearchResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		AD3515102896F18D005F9B7A /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		AD3515122896F828005F9B7A /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
 		AD35151428982963005F9B7A /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		AD35151828999327005F9B7A /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				AD351503289434ED005F9B7A /* Title.swift */,
+				AD35151828999327005F9B7A /* YoutubeSearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				AD3514DA2891BAFF005F9B7A /* SceneDelegate.swift in Sources */,
 				AD35151528982963005F9B7A /* SearchResultsViewController.swift in Sources */,
 				AD351506289543FD005F9B7A /* Extensions.swift in Sources */,
+				AD35151928999327005F9B7A /* YoutubeSearchResponse.swift in Sources */,
 				AD3514F12891BE06005F9B7A /* UpcomingViewController.swift in Sources */,
 				AD3514EF2891BDC8005F9B7A /* HomeViewController.swift in Sources */,
 				AD351504289434ED005F9B7A /* Title.swift in Sources */,
