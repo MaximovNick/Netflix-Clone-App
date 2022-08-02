@@ -18,6 +18,9 @@ struct Constants {
     static let discoveryMovie = "https://api.themoviedb.org/3/discover/movie?api_key=697d439ac993538da4e3e60b54e762cd&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate"
     
     static let searchMovie = "https://api.themoviedb.org/3/search/movie?api_key=697d439ac993538da4e3e60b54e762cd&query="
+    
+    static let youtubeApiKey = "AIzaSyBQgbMvoYGSgtCBDqwxOy_Sp_DfHHN9CKI"
+    static let youtubeBaseUrl = "https://youtube.googleapis.com/youtube/v3/search?"
 }
 
 enum APIError: Error {
@@ -142,6 +145,25 @@ class NetworkManager {
                 completion(.success(results.results))
             } catch {
                 completion(.failure(APIError.failedToGetData))
+            }
+        }
+        task.resume()
+    }
+    
+    func getMovie(with query: String) {
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+        
+        guard let url = URL(string: "\(Constants.youtubeBaseUrl)q=\(query)&key=\(Constants.youtubeApiKey)") else { return }
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+                let results = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                print(results)
+            } catch {
+                print(error.localizedDescription)
             }
         }
         task.resume()
