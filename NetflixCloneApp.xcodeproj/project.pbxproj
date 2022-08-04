@@ -29,6 +29,7 @@
 		AD35151528982963005F9B7A /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35151428982963005F9B7A /* SearchResultsViewController.swift */; };
 		AD35151928999327005F9B7A /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD35151828999327005F9B7A /* YoutubeSearchResponse.swift */; };
 		AD97BF02289AF9490001978A /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD97BF01289AF9490001978A /* TitlePreviewViewController.swift */; };
+		AD97BF04289BED4C0001978A /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD97BF03289BED4C0001978A /* TitlePreviewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		AD35151428982963005F9B7A /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		AD35151828999327005F9B7A /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
 		AD97BF01289AF9490001978A /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
+		AD97BF03289BED4C0001978A /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				AD3515122896F828005F9B7A /* TitleViewModel.swift */,
+				AD97BF03289BED4C0001978A /* TitlePreviewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				AD351506289543FD005F9B7A /* Extensions.swift in Sources */,
 				AD35151928999327005F9B7A /* YoutubeSearchResponse.swift in Sources */,
 				AD3514F12891BE06005F9B7A /* UpcomingViewController.swift in Sources */,
+				AD97BF04289BED4C0001978A /* TitlePreviewViewModel.swift in Sources */,
 				AD3514EF2891BDC8005F9B7A /* HomeViewController.swift in Sources */,
 				AD97BF02289AF9490001978A /* TitlePreviewViewController.swift in Sources */,
 				AD351504289434ED005F9B7A /* Title.swift in Sources */,
