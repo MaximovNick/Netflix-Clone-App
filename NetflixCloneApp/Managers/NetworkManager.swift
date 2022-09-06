@@ -32,7 +32,6 @@ class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
     
-    
     func getTrendingMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
         
         guard let url = URL(string: Constants.trendingMovie) else { return }
@@ -52,7 +51,9 @@ class NetworkManager {
     }
     
     func getTrendingTvs(completion: @escaping (Result<[Title], Error>) -> Void) {
+        
         guard let url = URL(string: Constants.trendingTv) else { return }
+        
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
                 return
@@ -85,7 +86,9 @@ class NetworkManager {
     }
     
     func getPopular(completion: @escaping (Result<[Title], Error>) -> Void) {
+        
         guard let url = URL(string: Constants.popularMovie) else { return }
+        
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
                 return
@@ -101,7 +104,9 @@ class NetworkManager {
     }
     
     func getTopRated(completion: @escaping (Result<[Title], Error>) -> Void) {
+        
         guard let url = URL(string: Constants.ratedMovie) else { return }
+        
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
                 return
@@ -117,7 +122,9 @@ class NetworkManager {
     }
     
     func getDiscoveryMovies(completion: @escaping (Result<[Title], Error>) -> Void) {
+        
         guard let url = URL(string: Constants.discoveryMovie) else { return }
+        
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
                 return
@@ -136,6 +143,7 @@ class NetworkManager {
         
         guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         guard let url = URL(string: "\(Constants.searchMovie)\(query)") else { return }
+        
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
             guard let data = data, error == nil else {
                 return
@@ -151,8 +159,8 @@ class NetworkManager {
     }
     
     func getMovie(with query: String, completion: @escaping (Result<VideoElement, Error>) -> Void) {
-        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         guard let url = URL(string: "\(Constants.youtubeBaseUrl)q=\(query)&key=\(Constants.youtubeApiKey)") else { return }
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in

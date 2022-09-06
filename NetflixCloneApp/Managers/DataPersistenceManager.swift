@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 
+
 enum DataBaseError: Error {
     case failedToSaveData
     case failedToFetchData
@@ -18,7 +19,6 @@ enum DataBaseError: Error {
 class DataPersistenceManager {
     
     static let shared = DataPersistenceManager()
-    
     
     func downloadTitleWith(model: Title, completion: @escaping (Result<Void, Error>) -> Void) {
         
@@ -56,7 +56,6 @@ class DataPersistenceManager {
         request = TitleItem.fetchRequest()
         
         do {
-            
             let titles = try context.fetch(request)
             completion(.success(titles))
             
@@ -71,7 +70,7 @@ class DataPersistenceManager {
         
         let context = appDelegate.persistentContainer.viewContext
         
-        context.delete(model) 
+        context.delete(model)
         
         do {
             try context.save()
@@ -79,6 +78,5 @@ class DataPersistenceManager {
         } catch {
             completion(.failure(DataBaseError.failedToDeleteData))
         }
-        
     }
 }

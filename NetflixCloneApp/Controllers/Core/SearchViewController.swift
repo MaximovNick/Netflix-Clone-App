@@ -12,7 +12,7 @@ class SearchViewController: UIViewController {
     private var titles: [Title] = []
     
     private let discoverTable: UITableView = {
-       let tableView = UITableView()
+        let tableView = UITableView()
         tableView.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
         return tableView
     }()
@@ -23,10 +23,10 @@ class SearchViewController: UIViewController {
         controller.searchBar.searchBarStyle = .minimal
         return controller
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemBackground
         title = "Search"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -45,6 +45,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
         discoverTable.frame = view.bounds
     }
     
@@ -61,10 +62,9 @@ class SearchViewController: UIViewController {
             }
         }
     }
- 
-
 }
 
+// MARK: -  UITableViewDelegate, UITableViewDataSource
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,11 +72,18 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: TitleTableViewCell.identifier,
+            for: indexPath) as? TitleTableViewCell else {
+            return UITableViewCell()
+        }
         
         let title = titles[indexPath.row]
         
-        let model = TitleViewModel(titleName: title.original_name ?? title.original_title ?? "Unknown Name", posterURL: title.poster_path ?? "")
+        let model = TitleViewModel(
+            titleName: title.original_name ?? title.original_title ?? "Unknown Name",
+            posterURL: title.poster_path ?? ""
+        )
         
         cell.configure(with: model)
         
@@ -99,10 +106,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             case .success(let videoElement):
                 DispatchQueue.main.async {
                     let vc = TitlePreviewViewController()
-                    vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? ""))
+                    vc.configure(with: TitlePreviewViewModel(
+                        title: titleName,
+                        youtubeView: videoElement,
+                        titleOverview: title.overview ?? "")
+                    )
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
-                
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -110,7 +120,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - UISearchResultsUpdating
 extension SearchViewController: UISearchResultsUpdating, SearchResultsViewControllerDelegate {
+    
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         
@@ -132,7 +144,6 @@ extension SearchViewController: UISearchResultsUpdating, SearchResultsViewContro
                 }
             }
         }
-        
     }
     
     func searchResultsViewControllerDidTapItem(_ viewModel: TitlePreviewViewModel) {

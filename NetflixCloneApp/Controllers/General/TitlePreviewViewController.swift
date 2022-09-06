@@ -11,7 +11,7 @@ import WebKit
 class TitlePreviewViewController: UIViewController {
     
     private let titleLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 22, weight: .bold)
         label.text = "Harry Potter"
@@ -28,7 +28,7 @@ class TitlePreviewViewController: UIViewController {
     }()
     
     private let downloadButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .red
         button.setTitle("Download", for: .normal)
@@ -43,7 +43,7 @@ class TitlePreviewViewController: UIViewController {
         webView.translatesAutoresizingMaskIntoConstraints = false
         return webView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -53,8 +53,7 @@ class TitlePreviewViewController: UIViewController {
         view.addSubview(downloadButton)
         
         configureConstraints()
-            
-        }
+    }
     
     private func configureConstraints() {
         
@@ -82,7 +81,6 @@ class TitlePreviewViewController: UIViewController {
             downloadButton.topAnchor.constraint(equalTo: overViewLabel.bottomAnchor, constant: 25),
             downloadButton.widthAnchor.constraint(equalToConstant: 140),
             downloadButton.heightAnchor.constraint(equalToConstant: 40)
-            
         ]
         
         NSLayoutConstraint.activate(webViewConstraints)
@@ -96,10 +94,6 @@ class TitlePreviewViewController: UIViewController {
         overViewLabel.text = model.titleOverview
         
         guard let url = URL(string: "https://www.youtube.com/embed/\(model.youtubeView.id.videoId)") else { return }
-        
         webView.load(URLRequest(url: url))
     }
-    
-    
-
 }

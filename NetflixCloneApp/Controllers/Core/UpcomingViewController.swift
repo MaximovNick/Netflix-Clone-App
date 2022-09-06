@@ -12,14 +12,14 @@ class UpcomingViewController: UIViewController {
     private var titles: [Title] = []
     
     private let upcomingTable: UITableView = {
-       let tableView = UITableView()
+        let tableView = UITableView()
         tableView.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
         return tableView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         view.backgroundColor = .systemBackground
         title = "Upcoming"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -52,15 +52,24 @@ class UpcomingViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         titles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: TitleTableViewCell.identifier,
+            for: indexPath) as? TitleTableViewCell else {
+            return UITableViewCell()
+        }
+        
         let title = titles[indexPath.row]
-        cell.configure(with: TitleViewModel(titleName: (title.original_title ?? title.original_name) ?? "Unknown Title name", posterURL: title.poster_path ?? ""))
+        cell.configure(with: TitleViewModel(
+            titleName: (title.original_title ?? title.original_name) ?? "Unknown Title name",
+                                                posterURL: title.poster_path ?? ""))
         return cell
     }
     
@@ -80,10 +89,13 @@ extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
             case .success(let videoElement):
                 DispatchQueue.main.async {
                     let vc = TitlePreviewViewController()
-                    vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? ""))
+                    vc.configure(with: TitlePreviewViewModel(
+                        title: titleName,
+                        youtubeView: videoElement,
+                        titleOverview: title.overview ?? "")
+                    )
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
-                
             case .failure(let error):
                 print(error.localizedDescription)
             }

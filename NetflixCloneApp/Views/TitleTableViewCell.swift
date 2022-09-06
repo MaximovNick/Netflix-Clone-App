@@ -12,7 +12,7 @@ class TitleTableViewCell: UITableViewCell {
     static let identifier = "TitleTableViewCell"
     
     private let playTitleButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         let image = UIImage(systemName: "play.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30))
         button.setImage(image, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +41,6 @@ class TitleTableViewCell: UITableViewCell {
         contentView.addSubview(playTitleButton)
         
         applyConstraints()
-        
     }
     
     private func applyConstraints() {
@@ -69,7 +68,7 @@ class TitleTableViewCell: UITableViewCell {
     
     func configure(with model: TitleViewModel) {
         guard let url = URL(string: "https://image.tmdb.org/t/p/w500/\(model.posterURL)") else { return }
-
+        
         titlePosterUIImageView.sd_setImage(with: url, completed: nil)
         titleLabel.text = model.titleName
     }

@@ -26,7 +26,7 @@ class SearchResultsViewController: UIViewController {
         collectionView.register(TitleCollectionViewCell.self, forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
         return collectionView
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -34,17 +34,17 @@ class SearchResultsViewController: UIViewController {
         
         searchResultsCollectionView.delegate = self
         searchResultsCollectionView.dataSource = self
-        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         searchResultsCollectionView.frame = view.bounds
     }
-    
 }
 
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension SearchResultsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         titles.count
     }
@@ -59,6 +59,7 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         collectionView.deselectItem(at: indexPath, animated: true)
         
         let title = titles[indexPath.row]
@@ -73,7 +74,5 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
                 print(error.localizedDescription)
             }
         }
-        
-       
     }
 }

@@ -39,8 +39,6 @@ class HeroHeadUIView: UIView {
         return imageView
     }()
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -91,6 +89,5 @@ class HeroHeadUIView: UIView {
         NSLayoutConstraint.activate(playButtonConstraints)
         NSLayoutConstraint.activate(downloadButtonConstraints)
     }
-    
 }
- 
+

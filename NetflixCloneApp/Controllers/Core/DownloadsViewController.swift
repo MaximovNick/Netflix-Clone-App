@@ -30,9 +30,12 @@ class DownloadsViewController: UIViewController {
         downloadTableView.dataSource = self
         
         fetchLocalStorageForDownload()
-        NotificationCenter.default.addObserver(forName: Notification.Name("downloaded"), object: nil, queue: nil) { _ in
-            self.fetchLocalStorageForDownload()
-        }
+        NotificationCenter.default.addObserver(
+            forName: Notification.Name("downloaded"),
+            object: nil,
+            queue: nil) { _ in
+                self.fetchLocalStorageForDownload()
+            }
     }
     
     private func fetchLocalStorageForDownload() {
@@ -53,10 +56,10 @@ class DownloadsViewController: UIViewController {
         super.viewDidLayoutSubviews()
         downloadTableView.frame = view.bounds
     }
-    
 }
 
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,9 +67,17 @@ extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: TitleTableViewCell.identifier,
+            for: indexPath) as? TitleTableViewCell else {
+            return UITableViewCell()
+        }
+        
         let title = titles[indexPath.row]
-        cell.configure(with: TitleViewModel(titleName: (title.original_title ?? title.original_name) ?? "Unknown Title name", posterURL: title.poster_path ?? ""))
+        cell.configure(with: TitleViewModel(
+            titleName: (title.original_title ?? title.original_name) ?? "Unknown Title name",
+            posterURL: title.poster_path ?? "")
+        )
         return cell
     }
     
@@ -77,7 +88,7 @@ extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         switch editingStyle {
         case .delete:
-          
+            
             DataPersistenceManager.shared.deleteTitleWith(model: titles[indexPath.row]) { [weak self] result in
                 switch result {
                 case .success():
@@ -87,13 +98,10 @@ extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
                 }
                 self?.titles.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
-               
             }
         default: break
         }
     }
-    
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -110,7 +118,6 @@ extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
                     vc.configure(with: TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? ""))
                     self?.navigationController?.pushViewController(vc, animated: true)
                 }
-                
             case .failure(let error):
                 print(error.localizedDescription)
             }

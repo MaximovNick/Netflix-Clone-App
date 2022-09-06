@@ -20,13 +20,11 @@ class HomeViewController: UIViewController {
     private var randomTrendingMovie: Title?
     private var headerView: HeroHeadUIView?
     
-    
     let sectionTitles: [String] = ["Trending Movies", "Trending Tv", "Popular", "Upcoming Movies", "Top Rated"]
     
     private let homeFeedTable: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
-        
         return tableView
     }()
     
@@ -45,7 +43,6 @@ class HomeViewController: UIViewController {
         homeFeedTable.tableHeaderView = headerView
         
         configureHeroHeaderView()
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -66,9 +63,7 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    
 }
-
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -200,5 +195,4 @@ extension HomeViewController: CollectionViewTableViewCellDelegate {
             self?.navigationController?.pushViewController(vc, animated: true)
         }
     }
-
 }
