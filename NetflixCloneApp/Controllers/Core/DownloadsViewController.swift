@@ -30,6 +30,9 @@ class DownloadsViewController: UIViewController {
         downloadTableView.dataSource = self
         
         fetchLocalStorageForDownload()
+        NotificationCenter.default.addObserver(forName: Notification.Name("downloaded"), object: nil, queue: nil) { _ in
+            self.fetchLocalStorageForDownload()
+        }
     }
     
     private func fetchLocalStorageForDownload() {
@@ -89,6 +92,8 @@ extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
         default: break
         }
     }
+    
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
